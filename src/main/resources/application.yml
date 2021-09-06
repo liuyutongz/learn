@@ -1,9 +1,32 @@
 # Springboot核心配置文件
 ##1.项目启动的端口
-server.port=8080
+server:
+  port: 8080
+
+
 #
 #  #2.数据库连接参数
-#spring.datasource.url=jdbc:mysql://localhost:3306/testkey?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-#spring.datasource.username=root
-#spring.datasource.password=123456
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.1.39:3306/testkey?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+person:
+  lastname: liuyutong
+  age: ${random.int}
+  happy: false
+  birth: 2021/02/22
+  maps: {k1: v1,k2: v2}
+  hello: haay
+  lists:
+    -code
+    -girl
+  dog:
+    name: ${person.hello:hello}_旺财
+dog:
+  firstname: 阿黄
+  age: 3
+
+
